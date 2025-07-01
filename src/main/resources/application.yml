@@ -1,0 +1,8 @@
+mcp:
+  client:
+    # URL do servidor MCP
+    server-url: http://localhost:8080
+
+spring:
+  application:
+    name: mcpclient-apipix
