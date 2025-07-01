@@ -1,47 +1,35 @@
-# MCP Client ApiPix
+# MCP Client API PIX
 
-Este projeto é um exemplo simples de **client** do [Model Context Protocol](https://modelcontextprotocol.io/) para a ApiPix. Foi criado a partir do guia de quickstart que utiliza o *mcp-client-boot-starter*.
+Este projeto demonstra um client simples do Model Context Protocol (MCP) para consumir a API Pix. A aplicação foi criada com Spring Boot 3 e Java 21 utilizando o *mcp-client-boot-starter*.
 
-## Estrutura
+## Arquitetura
 
-O projeto segue uma estrutura de aplicação Spring Boot:
+A estrutura do repositório segue o mesmo modelo do [mcpserver-apipix](https://github.com/bquerino/mcpserver-apipix):
 
-```
-.
-├── pom.xml
-├── src
-│   ├── main
-│   │   ├── java
-│   │   │   └── com
-│   │   │       └── example
-│   │   │           └── mcpclientapipix
-│   │   │               └── McpclientApipixApplication.java
-│   │   └── resources
-│   │       └── application.yml
+- **app/** – código da aplicação Spring Boot.
+- **docs/** – documentação e diagramas.
+- **infra/** – arquivos de infraestrutura.
+
+## Build e execução local
+
+Para rodar localmente é necessário ter Java 21 e Maven instalados. Execute os comandos dentro do diretório `app`:
+
+```bash
+mvn spring-boot:run
 ```
 
-## Como executar
-
-1. Certifique-se de possuir o JDK 17+ e o Maven instalados.
-2. Compile o projeto:
+Também é possível gerar o JAR e executá-lo manualmente:
 
 ```bash
 mvn package
-```
-
-3. Execute a aplicação:
-
-```bash
 java -jar target/mcpclient-apipix-0.0.1-SNAPSHOT.jar
 ```
 
-A aplicação iniciará e tentará se conectar ao servidor MCP configurado em `application.yml`.
-
 ## Configuração
 
-O arquivo `src/main/resources/application.yml` possui uma configuração mínima com a URL do servidor MCP. Ajuste este valor conforme sua necessidade.
+O arquivo `app/src/main/resources/application.yml` possui a URL do servidor MCP a ser utilizado:
 
-```
+```yaml
 mcp:
   client:
     server-url: http://localhost:8080
@@ -49,4 +37,4 @@ mcp:
 
 ## Licença
 
-Este projeto está disponibilizado sem garantia de funcionamento pois depende das dependências externas do MCP que não estão disponíveis neste ambiente off-line.
+Este projeto é fornecido apenas para fins de demonstração e depende de bibliotecas MCP externas que não estão disponíveis neste ambiente off-line.
